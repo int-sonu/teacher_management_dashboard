@@ -1,0 +1,34 @@
+{
+    "sourceFile": "src/api/teacherApi.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1774471364370,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1774471481423,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,11 +9,10 @@\n     'Content-Type': 'application/json',\n   },\n });\n \n-// GET all (Swagger returns { value: [] })\n-export const getTeachers = () =>\n-  teacherApi.get<{ value: Teacher[] }>('/Teachers');\n+// GET all (Swagger may return $values)\n+export const getTeachers = () => teacherApi.get<any>('/Teachers');\n \n // GET by id\n export const getTeacherById = (id: number) =>\n   teacherApi.get<Teacher>(`/Teachers/${id}`);\n@@ -21,9 +20,9 @@\n // POST\n export const createTeacher = (data: TeacherFormData) =>\n   teacherApi.post<Teacher>('/Teachers', data);\n \n-// PUT (⚠️ no response body expected)\n+// PUT (no response body)\n export const updateTeacher = (id: number, data: TeacherFormData) =>\n   teacherApi.put(`/Teachers/${id}`, data);\n \n // DELETE\n"
+                },
+                {
+                    "date": 1774471891091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,32 +1,28 @@\n-import axios from 'axios';\n-import type { Teacher, TeacherFormData } from '../types/teacher';\n+import axios from \"axios\";\n \n-const API_BASE_URL = '/api';\n+const API_URL = \"http://demoapimachinetest.ortezerp.in/api\";\n \n-const teacherApi = axios.create({\n-  baseURL: API_BASE_URL,\n-  headers: {\n-    'Content-Type': 'application/json',\n-  },\n-});\n+export const getTeachers = async () => {\n+  const res = await axios.get(`${API_URL}/Teachers`);\n+  return res.data;\n+};\n \n-// GET all (Swagger may return $values)\n-export const getTeachers = () => teacherApi.get<any>('/Teachers');\n+export const getTeacherById = async (id: number) => {\n+  const res = await axios.get(`${API_URL}/Teachers/${id}`);\n+  return res.data;\n+};\n \n-// GET by id\n-export const getTeacherById = (id: number) =>\n-  teacherApi.get<Teacher>(`/Teachers/${id}`);\n+export const createTeacher = async (data: any) => {\n+  const res = await axios.post(`${API_URL}/Teachers`, data);\n+  return res.data;\n+};\n\\ No newline at end of file\n \n-// POST\n-export const createTeacher = (data: TeacherFormData) =>\n-  teacherApi.post<Teacher>('/Teachers', data);\n+export const updateTeacher = async (id: number, data: any) => {\n+  const res = await axios.put(`${API_URL}/Teachers/${id}`, data);\n+  return res.data;\n+};\n \n-// PUT (no response body)\n-export const updateTeacher = (id: number, data: TeacherFormData) =>\n-  teacherApi.put(`/Teachers/${id}`, data);\n-\n-// DELETE\n-export const deleteTeacher = (id: number) =>\n-  teacherApi.delete(`/Teachers/${id}`);\n-\n-export default teacherApi;\n+export const deleteTeacherApi = async (id: number) => {\n+  await axios.delete(`${API_URL}/Teachers/${id}`);\n+  return id;\n+};\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1774472604039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import axios from \"axios\";\n \n-const API_URL = \"http://demoapimachinetest.ortezerp.in/api\";\n+const API_URL = \"/api\"; // 🔥 FIXED\n \n export const getTeachers = async () => {\n   const res = await axios.get(`${API_URL}/Teachers`);\n   return res.data;\n"
+                },
+                {
+                    "date": 1774472977341,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,28 +1,33 @@\n import axios from \"axios\";\n \n-const API_URL = \"/api\"; // 🔥 FIXED\n+const API_URL = \"/api\";\n \n+// GET ALL\n export const getTeachers = async () => {\n   const res = await axios.get(`${API_URL}/Teachers`);\n   return res.data;\n };\n \n+// 🔥 GET BY ID (ADDED)\n export const getTeacherById = async (id: number) => {\n   const res = await axios.get(`${API_URL}/Teachers/${id}`);\n   return res.data;\n };\n \n+// ADD\n export const createTeacher = async (data: any) => {\n   const res = await axios.post(`${API_URL}/Teachers`, data);\n   return res.data;\n };\n \n+// UPDATE\n export const updateTeacher = async (id: number, data: any) => {\n   const res = await axios.put(`${API_URL}/Teachers/${id}`, data);\n   return res.data;\n };\n \n+// DELETE\n export const deleteTeacherApi = async (id: number) => {\n   await axios.delete(`${API_URL}/Teachers/${id}`);\n   return id;\n };\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1774471364369,
+            "name": "Commit-0",
+            "content": "import axios from 'axios';\nimport type { Teacher, TeacherFormData } from '../types/teacher';\n\nconst API_BASE_URL = '/api';\n\nconst teacherApi = axios.create({\n  baseURL: API_BASE_URL,\n  headers: {\n    'Content-Type': 'application/json',\n  },\n});\n\n// GET all (Swagger returns { value: [] })\nexport const getTeachers = () =>\n  teacherApi.get<{ value: Teacher[] }>('/Teachers');\n\n// GET by id\nexport const getTeacherById = (id: number) =>\n  teacherApi.get<Teacher>(`/Teachers/${id}`);\n\n// POST\nexport const createTeacher = (data: TeacherFormData) =>\n  teacherApi.post<Teacher>('/Teachers', data);\n\n// PUT (⚠️ no response body expected)\nexport const updateTeacher = (id: number, data: TeacherFormData) =>\n  teacherApi.put(`/Teachers/${id}`, data);\n\n// DELETE\nexport const deleteTeacher = (id: number) =>\n  teacherApi.delete(`/Teachers/${id}`);\n\nexport default teacherApi;"
+        }
+    ]
+}

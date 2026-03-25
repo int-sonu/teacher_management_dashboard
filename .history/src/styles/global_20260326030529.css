@@ -1,0 +1,99 @@
+:root {
+  /* 🔥 PRIMARY THEME (GREEN) */
+  --primary: #006d5b;
+  --primary-hover: #005a4a;
+  --secondary: #f7a400;
+  --accent: #00a884;
+
+  /* BACKGROUND */
+  --background: #020617;
+  --surface: rgba(30, 41, 59, 0.5);
+
+  /* TEXT */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  /* STATUS */
+  --success: #10b981;
+  --error: #ef4444;
+  --warning: #f59e0b;
+
+  /* UI */
+  --border: rgba(255, 255, 255, 0.05);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+
+  --radius: 0.5rem;
+  --radius-lg: 0.75rem;
+}
+
+/* BASE */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+
+/* BUTTONS */
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  padding: 10px 20px;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+/* TABLE */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table th {
+  text-align: left;
+  padding: 12px;
+  background: #0f172a;
+  color: var(--text-secondary);
+}
+
+.table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ACTION BUTTONS */
+.btn-edit {
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.btn-delete {
+  color: var(--error);
+  cursor: pointer;
+}
+
+/* INPUT */
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #0f172a;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: white;
+}
+
+/* CARD */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  border: 1px solid var(--glass-border);
+}

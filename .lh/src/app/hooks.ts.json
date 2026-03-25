@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/app/hooks.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1774471980900,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1774472107689,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n-import { TypedUseSelectorHook, useDispatch, useSelector } from \"react-redux\";\n-import type { RootState, AppDispatch } from \"./store\";\n+import { useDispatch, useSelector } from 'react-redux';\n+import type { TypedUseSelectorHook } from 'react-redux';\n+import type { RootState, AppDispatch } from './store';\n\\ No newline at end of file\n \n+// Use throughout your app instead of plain `useDispatch` and `useSelector`\n export const useAppDispatch = () => useDispatch<AppDispatch>();\n-export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;\n+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;\n"
+                }
+            ],
+            "date": 1774471980900,
+            "name": "Commit-0",
+            "content": "import { TypedUseSelectorHook, useDispatch, useSelector } from \"react-redux\";\nimport type { RootState, AppDispatch } from \"./store\";\n\nexport const useAppDispatch = () => useDispatch<AppDispatch>();\nexport const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;"
+        }
+    ]
+}

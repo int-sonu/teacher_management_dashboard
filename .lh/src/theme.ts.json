@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/theme.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1774474380871,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1774475240428,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -98,9 +98,9 @@\n     MuiAppBar: {\n       styleOverrides: {\n         root: {\n           backgroundColor: '#ffffff',\n-          color: '#1e293b',\n+          color: '#dadee4',\n           boxShadow: 'none',\n           borderBottom: '1px solid #e2e8f0',\n         },\n       },\n"
+                }
+            ],
+            "date": 1774474380871,
+            "name": "Commit-0",
+            "content": "import { createTheme } from '@mui/material/styles';\n\nconst theme = createTheme({\n  palette: {\n    primary: {\n      main: '#006d5b',\n      contrastText: '#ffffff',\n    },\n    secondary: {\n      main: '#f7a400',\n    },\n    background: {\n      default: '#f8fafc', // 🔥 better soft background\n      paper: '#ffffff',\n    },\n    text: {\n      primary: '#1e293b',\n      secondary: '#64748b',\n    },\n  },\n\n  typography: {\n    fontFamily: '\"Inter\", \"Roboto\", \"Helvetica\", \"Arial\", sans-serif',\n    h1: {\n      fontWeight: 900,\n      letterSpacing: '-0.02em',\n    },\n    h2: {\n      fontWeight: 800,\n    },\n    h5: {\n      fontWeight: 700,\n    },\n    button: {\n      textTransform: 'none',\n      fontWeight: 600,\n    },\n  },\n\n  shape: {\n    borderRadius: 12,\n  },\n\n  components: {\n    // 🔥 BUTTON\n    MuiButton: {\n      styleOverrides: {\n        root: {\n          padding: '10px 20px',\n          borderRadius: '10px',\n        },\n        containedPrimary: {\n          backgroundColor: '#006d5b',\n          '&:hover': {\n            backgroundColor: '#005a4a',\n          },\n        },\n      },\n    },\n\n    // 🔥 CARD / PAPER\n    MuiPaper: {\n      styleOverrides: {\n        root: {\n          borderRadius: '16px',\n          padding: '16px',\n        },\n      },\n    },\n\n    // 🔥 TABLE\n    MuiTableCell: {\n      styleOverrides: {\n        head: {\n          fontWeight: 700,\n          backgroundColor: '#f1f5f9',\n        },\n        root: {\n          padding: '12px',\n        },\n      },\n    },\n\n    // 🔥 INPUT\n    MuiTextField: {\n      defaultProps: {\n        variant: 'outlined',\n        fullWidth: true,\n      },\n      styleOverrides: {\n        root: {\n          backgroundColor: '#ffffff',\n        },\n      },\n    },\n\n    // 🔥 APPBAR\n    MuiAppBar: {\n      styleOverrides: {\n        root: {\n          backgroundColor: '#ffffff',\n          color: '#1e293b',\n          boxShadow: 'none',\n          borderBottom: '1px solid #e2e8f0',\n        },\n      },\n    },\n  },\n});\n\nexport default theme;"
+        }
+    ]
+}
