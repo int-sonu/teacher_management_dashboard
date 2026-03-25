@@ -36,7 +36,7 @@ const DashboardLayout: React.FC<{ children: React.ReactNode }> = ({ children }) 
           <Users size={18} color="#fff" />
         </Box>
         <Typography variant="h6" fontWeight="bold" color="primary.main">
-          Course Space
+          Teacher Dashboard
         </Typography>
       </Box>
 

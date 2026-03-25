@@ -51,7 +51,7 @@ const PublicLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => 
                 gap: 0.5
               }}
             >
-              Course<Box component="span" sx={{ color: '#00a884' }}>space</Box>
+              Teacher<Box component="span" sx={{ color: '#00a884' }}>Dashboard</Box>
             </Typography>
 
             {!isMobile && (
@@ -155,7 +155,7 @@ const PublicLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => 
       <Box sx={{ py: 6, borderTop: '1px solid #f1f5f9', bgcolor: '#ffffff' }}>
         <Container maxWidth="lg">
            <Typography variant="body2" color="text.secondary" align="center">
-             © 2026 Coursespace. Academic excellence redefined.
+             © 2026 Teacher Dashboard. Academic excellence redefined.
            </Typography>
         </Container>
       </Box>
